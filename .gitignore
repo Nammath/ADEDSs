@@ -1,0 +1,10 @@
+ADEDS/bin
+ADEDS/obj
+ADEDS/Properties
+ADEDS/Views
+.vs
+packages
+ADEDS.sln
+UnitTestProject/bin
+UnitTestProject/obj
+UnitTestProject/Properties
