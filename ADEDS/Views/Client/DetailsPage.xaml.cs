@@ -29,8 +29,10 @@ namespace ADEDS.Views.Client
             settlementType = type;
             settlement = new Settlement(settlementType);
             cart = modelItem;
-            setType.SelectedIndex = 0;
-
+            if (type == "Invoice")
+                setType.SelectedIndex = 0;
+            else
+                setType.SelectedIndex = 1;
             var user = MainWindow.loggedUser;
             loggedUserInfo.Content = "Logged as: " + user.firstName + " " + user.lastName;
 
