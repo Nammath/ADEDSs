@@ -1,0 +1,30 @@
+﻿<Page x:Class="ADEDS.Views.Client.ClientMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ADEDS.Views.Client"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="ClientMenu">
+
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="5*"/>
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0">
+				<Label Name="loggedUserInfo" VerticalAlignment="Center"/>
+			</Grid>
+			<Grid Grid.Column="2">
+				<Button Content="Log out" Margin="40" Click="LogOut"/>
+			</Grid>
+		</Grid>
+	</Grid>
+</Page>

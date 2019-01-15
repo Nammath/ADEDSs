@@ -1,0 +1,31 @@
+﻿<Page x:Class="ADEDS.Views.Admin.AdminMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ADEDS.Views.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminMenu">
+
+    <Grid>
+        <ListView Margin="10,60,10,10" x:Name="lvWorkers" ItemsSource="{Binding workerList}" SelectionChanged="LvWorkers_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nazwisko" Width="200" DisplayMemberBinding="{Binding lastName}" />
+                    <GridViewColumn Header="Imię" Width="100" DisplayMemberBinding="{Binding firstName}" />
+                    <GridViewColumn Header="Login" Width="150" DisplayMemberBinding="{Binding login}" />
+                    <GridViewColumn Header="Płaca" Width="100" DisplayMemberBinding="{Binding wage}" />
+                    <GridViewColumn Header="Manadżer" Width="75" DisplayMemberBinding="{Binding is_manager}" />
+                    <GridViewColumn Header="Specjalista IT" Width="75" DisplayMemberBinding="{Binding is_IT_spec}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Daj awans na menedżera" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="180" Click="ChangeManager"/>
+        <Button Content="Daj awans na specjalistę IT" HorizontalAlignment="Left" Margin="195,35,0,0" VerticalAlignment="Top" Width="180" Click="ChangeITSpecialist"/>
+        <Button Content="Zwolnij" Background="IndianRed" HorizontalAlignment="Left" Margin="711,35,0,0" VerticalAlignment="Top" Width="79" Click="Unemploy"/>
+        <Button Content="Zmień bazową pensję" HorizontalAlignment="Left" Margin="380,35,0,0" VerticalAlignment="Top" Width="180" Click="ChangeWage"/>
+        <TextBox x:Name="tbWage" HorizontalAlignment="Left" Height="20" Margin="565,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+
+    </Grid>
+</Page>
