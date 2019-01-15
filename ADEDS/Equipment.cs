@@ -76,7 +76,7 @@ namespace ADEDS
         {
             if (!mileage.Equals(null))
             {
-                throw new ArgumentException();
+            //    throw new ArgumentException();
             }
         }
 

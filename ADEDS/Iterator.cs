@@ -44,7 +44,8 @@ namespace ADEDS
         }
         public virtual Worker Next()
         {
-            return List[Counter++];
+            // return List[Counter++];
+            return null;
         }
     }
 
