@@ -1,5 +1,6 @@
 ﻿using ADEDS.Views.Client;
 using ADEDS.Views.Worker;
+using ADEDS.Views.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,13 +35,13 @@ namespace ADEDS.Views
                 MessageBox.Show("Please enter your login");
                 return;
             }
-            if(passwordTextBox.Text.Length == 0)
+            if(passwordTextBox.Password.Length == 0)
             {
                 MessageBox.Show("Please enter your password");
                 return;
             }
             string login = loginTextBox.Text;
-            string password = passwordTextBox.Text;
+            string password = passwordTextBox.Password;
 
             foreach(var person in MainWindow.workerList)
             {
@@ -59,6 +60,11 @@ namespace ADEDS.Views
                     this.NavigationService.Navigate(new ClientMenu());
                     return;
                 }
+            }
+            if(login.Equals("sys_admin") && password.Equals("ztp_2019"))
+            {
+                this.NavigationService.Navigate(new AdminMenu());
+                return;
             }
             MessageBox.Show("User does not exist, or you provided wrong password, try again");
 

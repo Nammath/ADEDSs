@@ -21,7 +21,6 @@ namespace ADEDS
     {
         public static List<Worker> workerList = new List<Worker>();
         public static List<Client> clientList = new List<Client>();
-        public static Storage storage = Storage.getStorageInstance();
         public static Person loggedUser;
 
         public MainWindow()

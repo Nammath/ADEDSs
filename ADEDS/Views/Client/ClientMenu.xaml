@@ -4,81 +4,27 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ADEDS.Views.Client"
-	  xmlns:app="clr-namespace:ADEDS"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="ClientMenu">
-	<Page.CommandBindings>
-		<CommandBinding Command="app:Commands.Cart" CanExecute="CommandBinding_CanExecute"/>
-	</Page.CommandBindings>
-	<Grid>
+
+    <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
-			<RowDefinition Height="6*"/>
-			<RowDefinition Height="*"/>
+			<RowDefinition Height="5*"/>
 		</Grid.RowDefinitions>
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="2*"/>
-				<ColumnDefinition Width="0.5*"/>
+				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 			<Grid Grid.Column="0">
 				<Label Name="loggedUserInfo" VerticalAlignment="Center"/>
 			</Grid>
 			<Grid Grid.Column="2">
-				<Button Content="Log out" Margin="30" Click="LogOut"/>
+				<Button Content="Log out" Margin="40" Click="LogOut"/>
 			</Grid>
-		</Grid>
-		<Grid Grid.Row="1">
-			<ListView Name="listOfItems">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition/>
-								<ColumnDefinition/>
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition/>
-								<RowDefinition/>
-								<RowDefinition/>
-								<RowDefinition/>
-								<RowDefinition/>
-							</Grid.RowDefinitions>
-							<WrapPanel Grid.Row="0" Grid.Column="0">
-								<TextBlock Text="Name: "/>
-								<TextBlock Text="{Binding Name}"/>
-							</WrapPanel>
-							<WrapPanel Grid.Row="1" Grid.Column="0">
-								<TextBlock Text="Type: "/>
-								<TextBlock Text="{Binding Type}"/>
-							</WrapPanel>
-							<WrapPanel Grid.Row="2" Grid.Column="0">
-								<TextBlock Text="Model: "/>
-								<TextBlock Text="{Binding Model}"/>
-							</WrapPanel>
-							<WrapPanel Grid.Row="3" Grid.Column="0">
-								<TextBlock Text="Series: "/>
-								<TextBlock Text="{Binding Series}"/>
-							</WrapPanel>
-							<WrapPanel Grid.Row="4" Grid.Column="0">
-								<TextBlock Text="Price: "/>
-								<TextBlock Text="{Binding Price}"/>
-							</WrapPanel>
-							<Button Content="Buy" Grid.Column="1" Grid.Row="4" Click="addToCart"/>
-							<Button Content="Delete" Grid.Column="1" Grid.Row="3" Click="deleteFromCart" Name="deleteButton" Visibility="Hidden"/>
-						</Grid>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</Grid>
-		<Grid Grid.Row="2">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="4*"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
-			<Button Content="Cart (0)" Grid.Column="1" Margin="30" Click="goToCart" Name="cartButton" Command="app:Commands.Cart"/>
 		</Grid>
 	</Grid>
 </Page>

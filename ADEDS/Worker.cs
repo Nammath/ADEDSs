@@ -9,6 +9,8 @@ namespace ADEDS
     public abstract class Worker : Person
     {
         public int wage { get; set; }
+        public string is_manager { get; set;}
+        public string is_IT_spec { get; set; }
         
         protected bool isDataAccessGranted;
 
@@ -40,9 +42,12 @@ namespace ADEDS
             this.lastName = lastName;
             this.login = login;
             this.password = password;
+            is_IT_spec = "X";
+            is_manager = "X";
         }
 
         public abstract void wageRise();
+        public void wageChange(int i) { wage = i; }
         public abstract void dataAccess();
         public abstract void position();
 
@@ -83,6 +88,8 @@ namespace ADEDS
             lastName = worker.lastName;
             login = worker.login;
             password = worker.password;
+            is_manager = "✔";
+            is_IT_spec = worker.is_IT_spec;
 
         }
 
@@ -111,6 +118,8 @@ namespace ADEDS
             lastName = worker.lastName;
             login = worker.login;
             password = worker.password;
+            is_IT_spec = "✔";
+            is_manager = worker.is_manager;
         }
 
         public override void wageRise()

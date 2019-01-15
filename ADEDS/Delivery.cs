@@ -9,14 +9,23 @@ namespace ADEDS
     public class Delivery : Subject
     {
         private bool finished = false;
-        private Dictionary<ModelItem, SpecificItem> shipmentList;
+        private Dictionary<SpecificItem, ModelItem> shipmentList;
+        private Order order;
 
         public Delivery(Order o)
-         {
-
-
-
-         }
+        {
+            order = o;
+            Storage s = Storage.getStorageInstance();
+            SpecificItem temp;
+            temp = s.GetUnsoldItem(order.Item);
+            for (int i = 0; i < order.Amount && temp != null; i++)
+            {
+                shipmentList.Add(temp, order.Item);
+                temp = s.GetUnsoldItem(order.Item);
+            }
+            if (temp == null)
+                Console.WriteLine("Zabraklo przedmiotow");
+        }
 
         public void Finished()
         {
