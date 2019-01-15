@@ -52,7 +52,9 @@ namespace ADEDS.Views.Client
                 order.Item = item;
                 MainWindow.storage.addOrder(order);
             }
-            settlement.printSettlement(cart);
+            settlement.printSettlement(cart, name, phone, address);
+            MessageBox.Show("Thank you for your purchase!");
+            this.NavigationService.Navigate(new ClientMenu());
         }
 
         private void back(object sender, RoutedEventArgs e)
